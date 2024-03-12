@@ -7,7 +7,7 @@ char* get_alphabet(int n) {
     char alphabet[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     if (n > 62) n = 62;
 
-    char* result = malloc((n + 1) * sizeof(char));
+    char* result = static_cast<char*>(malloc((n + 1) * sizeof(char)));
     strncpy(result, alphabet, n);
     result[n] = '\0';
 
@@ -15,7 +15,7 @@ char* get_alphabet(int n) {
 }
 
 // Перевод из системы счисления с основанием base в десятичную систему счисления
-int convert_to_dec(char* number, int base){
+int convert_to_dec(const char* number, int base){
     if (base > 62){
         return -1;
     }
@@ -53,7 +53,7 @@ char* base_converter(char* number, int base1, int base2){
         len++;
     }
     if (len == 0) len = 1;
-    char* result = malloc((len + 1) * sizeof(char));
+    char* result = static_cast<char*>(malloc((len + 1) * sizeof(char)));
     result[len] = '\0';
     for (int i = len - 1; i >= 0; i--) {
         result[i] = alphabet[dec % base2];
