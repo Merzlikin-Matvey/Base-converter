@@ -39,7 +39,7 @@ int convert_to_dec(const char* number, int base){
 }
 
 // Перевод из системы счисления с основанием base1 в систему с основанием base2
-char* base_converter(char* number, int base1, int base2){
+char* base_converter(const char* number, int base1, int base2){
     if (base1 > 62 || base2 > 62){
         return NULL;
     }
