@@ -1,6 +1,3 @@
-#ifndef MAIN_H
-#define MAIN_H
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -64,5 +61,3 @@ char* base_converter(const char* number, int base1, int base2){
     }
     return result;
 }
-
-#endif //MAIN_H
